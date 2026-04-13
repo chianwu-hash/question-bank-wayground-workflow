@@ -2,6 +2,44 @@
 
 這是一個可搬移到其他教學專案的「題庫製作到 Wayground 上架」模組。
 
+## Quick Start
+
+若你要把這個 repo 當成獨立模組使用，建議先完成以下步驟：
+
+1. 安裝依賴：
+
+```bash
+npm install
+```
+
+2. 準備已登入 Wayground / Gemini 的 Chrome，並以 `9222` 開啟 remote debugging。
+
+3. 先測試瀏覽器連線：
+
+```bash
+npm run browser:smoke
+```
+
+4. 將模組安裝到目標專案：
+
+Ubuntu / macOS / WSL：
+
+```bash
+./scripts/install-module.sh <target-project-root>
+```
+
+Windows / PowerShell：
+
+```powershell
+.\scripts\install-module.ps1 -TargetProjectRoot <target-project-root>
+```
+
+5. 到目標專案中完成：
+
+- 合併 `PACKAGE_SCRIPTS_SNIPPET.question-bank-wayground.json` 到 `package.json`
+- 填寫 `project.config.md`
+- 依 `docs/workflow/DEPLOYMENT_CHECKLIST.md` 做第一次小規模驗證
+
 適用情境：
 - 從 PDF 教材、歷屆考題或教師手冊整理文字資料。
 - 依教材範圍與命題規格組合 prompt，產生本地 Markdown 題庫。
@@ -79,6 +117,14 @@ Ubuntu / macOS / WSL：
 ```
 
 安裝腳本會建立標準資料夾、複製 automation 腳本、workflow 文件、prompt 模板與 templates，並把 scripts snippet 複製成 `PACKAGE_SCRIPTS_SNIPPET.question-bank-wayground.json` 供你合併進 `package.json`。
+
+目前安裝腳本也會一併複製：
+
+- `automation/*.js`
+- `automation/lib/browser.js`
+- workflow 文件
+- prompt 模板
+- templates
 
 ## 獨立 Repo 匯出
 

@@ -45,6 +45,8 @@ Ensure-Dir $templatesDir
 Ensure-Dir (Join-Path $targetRoot "wayground")
 
 Copy-Item -Path (Join-Path $moduleRoot "automation\*.js") -Destination $automationDir -Force
+Ensure-Dir (Join-Path $automationDir "lib")
+Copy-Item -Path (Join-Path $moduleRoot "automation\lib\*") -Destination (Join-Path $automationDir "lib") -Recurse -Force
 
 Copy-FileToDir (Join-Path $moduleRoot "AI_DEPLOY_PROMPT.md") $workflowDir
 Copy-FileToDir (Join-Path $moduleRoot "README.md") $workflowDir

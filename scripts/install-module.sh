@@ -38,6 +38,8 @@ mkdir -p "$templates_dir"
 mkdir -p "$target_root/wayground"
 
 cp "$module_root"/automation/*.js "$automation_dir"/
+mkdir -p "$automation_dir/lib"
+cp -R "$module_root"/automation/lib/. "$automation_dir/lib"/
 
 cp "$module_root/AI_DEPLOY_PROMPT.md" "$workflow_dir"/
 cp "$module_root/README.md" "$workflow_dir"/

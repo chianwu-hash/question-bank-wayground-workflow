@@ -5,6 +5,7 @@ Use this checklist after copying the module into a new project.
 ## Files copied
 
 - [ ] `automation/*.js` copied to `automation/`
+- [ ] `automation/lib/browser.js` copied to `automation/lib/`
 - [ ] `CHANGELOG.md` exists if this is a standalone repo export
 - [ ] `PACKAGE_SCRIPTS_SNIPPET.json` scripts merged into `package.json`
 - [ ] `docs/workflow/README.md` exists

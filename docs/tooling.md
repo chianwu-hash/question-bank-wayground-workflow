@@ -50,7 +50,7 @@ Common output artifacts:
 
 - `automation/wayground-generate-from-bank.js`
   - reads a Markdown bank and drives the assessment -> AI -> text prompt flow
-  - supports `--language`, `--subject`, `--grade`, `--count`
+  - supports `--lang`, `--subject`, `--grade`, `--count`
   - includes handling for science subtopic / use-quiz intermediate pages
 
 - `automation/wayground-import-from-bank.js`
@@ -78,6 +78,10 @@ Common output artifacts:
   - copies share links from the Wayground library for quiz IDs in a JSON config
   - default config path: `automation/wayground-quizzes.json`
   - default output path: `automation/output/wayground-links.json`
+
+- `automation/lib/browser.js`
+  - shared helper for CDP connection and `automation/output/` initialization
+  - reduces duplicated Playwright boilerplate across Wayground scripts
 
 - `automation/gemini-capture-latest-response.js`
   - captures only the latest Gemini model response from the current open Gemini tab
