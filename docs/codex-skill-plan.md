@@ -113,3 +113,22 @@ skills/question-bank-wayground/
 3. 確認 `scripts/install-module.ps1` 能安裝所有必要文件。
 4. 用一個非目前主專案的測試專案跑過最小流程。
 5. 把 Wayground UI 變動造成的手動介入點寫進 troubleshooting。
+
+## 目前進度
+
+第一版 skill scaffold 已建立於：
+
+```text
+skills/question-bank-wayground/
+```
+
+目前已完成：
+
+- `SKILL.md`：定義觸發情境、必讀文件順序、核心規則、分科路由與輸出位置
+- `agents/openai.yaml`：提供 Codex UI 顯示名稱、簡述與預設提示詞
+
+目前尚未完成：
+
+- skill 專用 references 分拆
+- 專用 troubleshooting 參考檔
+- 用實際新專案驗證 skill 是否足以獨立帶流程
