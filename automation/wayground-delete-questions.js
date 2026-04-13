@@ -1,6 +1,6 @@
-const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
+const { connectAndFindPage, ensureOutputDir } = require('./lib/browser');
 
 function parseQuestionNumbers(argv) {
   const raw = argv.join(',');
@@ -51,16 +51,7 @@ async function main() {
     throw new Error('Usage: node automation/wayground-delete-questions.js 19,18');
   }
 
-  const browser = await chromium.connectOverCDP('http://localhost:9222');
-  const context = browser.contexts()[0];
-  if (!context) throw new Error('No browser context found via CDP.');
-
-  const page =
-    context.pages().find((p) => p.url().includes('/admin/quiz/') && p.url().includes('/edit')) ||
-    context.pages().find((p) => p.url().includes('wayground.com')) ||
-    context.pages()[0];
-
-  if (!page) throw new Error('No Wayground page found.');
+  const { browser, page } = await connectAndFindPage(/\/admin\/quiz\/.*\/edit/);
 
   await page.waitForLoadState('domcontentloaded');
   await page.waitForTimeout(1000);
@@ -91,8 +82,7 @@ async function main() {
     };
   });
 
-  const outDir = path.join(process.cwd(), 'automation', 'output');
-  fs.mkdirSync(outDir, { recursive: true });
+  const outDir = ensureOutputDir();
   await page.screenshot({
     path: path.join(outDir, 'wayground-after-delete.png'),
     fullPage: true,

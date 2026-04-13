@@ -1,6 +1,6 @@
-const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
+const { connectAndFindPage, ensureOutputDir } = require('./lib/browser');
 
 function resolveInputFile(arg) {
   if (!arg) {
@@ -191,15 +191,7 @@ async function main() {
   const questions = buildQuestionPayload(bank.questions);
   const grade = String(options.grade);
 
-  const browser = await chromium.connectOverCDP('http://localhost:9222');
-  const context = browser.contexts()[0];
-  if (!context) throw new Error('No browser context found via CDP.');
-
-  const page =
-    context.pages().find((p) => p.url().includes('wayground.com')) ||
-    context.pages()[0];
-
-  if (!page) throw new Error('No Wayground page found.');
+  const { browser, page } = await connectAndFindPage(/wayground\.com/);
 
   await page.goto('https://wayground.com/admin/assessment', {
     waitUntil: 'domcontentloaded',
@@ -275,7 +267,7 @@ async function main() {
     subject: options.subject,
     grade,
     questions,
-    shouldPublish: false,
+    shouldPublish: options.publish,
   });
 
   if (!result.ok) {
@@ -288,8 +280,7 @@ async function main() {
   });
   await page.waitForTimeout(1500);
 
-  const outDir = path.join(process.cwd(), 'automation', 'output');
-  fs.mkdirSync(outDir, { recursive: true });
+  const outDir = ensureOutputDir();
 
   const output = {
     inputFile: options.file,

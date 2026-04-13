@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { chromium } = require('playwright');
+const { connectAndFindPage } = require('./lib/browser');
 
 function parseArgs(argv) {
   const options = {
@@ -72,13 +72,8 @@ async function main() {
   const options = parseArgs(process.argv.slice(2));
   const quizzes = loadQuizConfig(options.config);
 
-  const browser = await chromium.connectOverCDP('http://127.0.0.1:9222');
-  const context = browser.contexts()[0];
-  if (!context) throw new Error('No CDP browser context found.');
-
-  let page = context.pages().find((p) =>
-    p.url().includes('wayground.com/admin/my-library/createdByMe')
-  );
+  const { browser, context } = await connectAndFindPage(null);
+  let page = context.pages().find((p) => /wayground\.com\/admin\/my-library/.test(p.url()));
   if (!page) page = await context.newPage();
 
   await page.goto('https://wayground.com/admin/my-library/createdByMe', {

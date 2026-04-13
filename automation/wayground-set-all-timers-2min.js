@@ -1,18 +1,11 @@
 const fs = require('fs');
 const path = require('path');
-const { chromium } = require('playwright');
-
-const OUTPUT_DIR = path.resolve(__dirname, 'output');
-fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+const { connectAndFindPage, ensureOutputDir } = require('./lib/browser');
 
 const TWO_MIN_RE = /\u0032\s*\u5206/;
 
-(async () => {
-  const browser = await chromium.connectOverCDP('http://127.0.0.1:9222');
-  const context = browser.contexts()[0];
-  if (!context) throw new Error('No CDP browser context found');
-  const page = context.pages().find(p => /wayground\.com\/admin\/quiz\//.test(p.url())) || context.pages()[0];
-  if (!page) throw new Error('No Wayground page found');
+async function main() {
+  const { browser, page } = await connectAndFindPage(/wayground\.com\/admin\/quiz\//);
   await page.bringToFront();
   await page.waitForLoadState('domcontentloaded');
 
@@ -83,11 +76,14 @@ const TWO_MIN_RE = /\u0032\s*\u5206/;
     skipped,
   };
 
-  fs.writeFileSync(path.join(OUTPUT_DIR, 'wayground-set-all-timers-2min.json'), JSON.stringify(result, null, 2), 'utf8');
-  await page.screenshot({ path: path.join(OUTPUT_DIR, 'wayground-set-all-timers-2min.png'), fullPage: true });
+  const outDir = ensureOutputDir();
+  fs.writeFileSync(path.join(outDir, 'wayground-set-all-timers-2min.json'), JSON.stringify(result, null, 2), 'utf8');
+  await page.screenshot({ path: path.join(outDir, 'wayground-set-all-timers-2min.png'), fullPage: true });
   console.log(JSON.stringify(result, null, 2));
   await browser.close();
-})().catch(err => {
+}
+
+main().catch((err) => {
   console.error(err);
   process.exit(1);
 });

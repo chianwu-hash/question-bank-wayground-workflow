@@ -1,6 +1,6 @@
-const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
+const { connectAndFindPage, ensureOutputDir } = require('./lib/browser');
 
 function resolveInputFile(arg) {
   if (!arg) {
@@ -16,7 +16,7 @@ function resolveInputFile(arg) {
 function parseArgs(argv) {
   const options = {
     file: null,
-    language: 'Chinese, Traditional',
+    lang: 'Chinese, Traditional',
     subject: '世界語言',
     grade: '大學',
     count: null,
@@ -25,8 +25,8 @@ function parseArgs(argv) {
   const positional = [];
   for (let i = 0; i < argv.length; i += 1) {
     const arg = argv[i];
-    if (arg === '--language' && argv[i + 1]) {
-      options.language = argv[++i];
+    if (arg === '--lang' && argv[i + 1]) {
+      options.lang = argv[++i];
     } else if (arg === '--subject' && argv[i + 1]) {
       options.subject = argv[++i];
     } else if (arg === '--grade' && argv[i + 1]) {
@@ -169,15 +169,7 @@ async function main() {
   const options = parseArgs(process.argv.slice(2));
   const content = fs.readFileSync(options.file, 'utf8');
 
-  const browser = await chromium.connectOverCDP('http://localhost:9222');
-  const context = browser.contexts()[0];
-  if (!context) throw new Error('No browser context found via CDP.');
-
-  const page =
-    context.pages().find((p) => p.url().includes('wayground.com')) ||
-    context.pages()[0];
-
-  if (!page) throw new Error('No Wayground page found.');
+  const { browser, page } = await connectAndFindPage(/wayground\.com/);
 
   await page.goto('https://wayground.com/admin/assessment', {
     waitUntil: 'networkidle',
@@ -192,7 +184,7 @@ async function main() {
   await textArea.fill(content);
   await page.waitForTimeout(500);
 
-  await selectDropdownOption(page, 'language-dropdown', options.language);
+  await selectDropdownOption(page, 'language-dropdown', options.lang);
   await selectDropdownOption(page, 'subject-dropdown', options.subject);
   await selectDropdownOption(page, 'grade-dropdown', options.grade);
   await selectQuestionCount(page, options.count);
@@ -204,8 +196,7 @@ async function main() {
   await clickPrimaryGenerateButton(page);
   await advanceAfterFirstGenerate(page);
 
-  const outDir = path.join(process.cwd(), 'automation', 'output');
-  fs.mkdirSync(outDir, { recursive: true });
+  const outDir = ensureOutputDir();
 
   const result = {
     inputFile: options.file,

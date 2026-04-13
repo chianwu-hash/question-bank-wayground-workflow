@@ -1,18 +1,9 @@
-const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
+const { connectAndFindPage, ensureOutputDir } = require('./lib/browser');
 
 async function main() {
-  const browser = await chromium.connectOverCDP('http://localhost:9222');
-  const context = browser.contexts()[0];
-  if (!context) throw new Error('No browser context found via CDP.');
-
-  const page =
-    context.pages().find((p) => p.url().includes('/admin/quiz/') && p.url().includes('/edit')) ||
-    context.pages().find((p) => p.url().includes('wayground.com')) ||
-    context.pages()[0];
-
-  if (!page) throw new Error('No Wayground page found.');
+  const { browser, page } = await connectAndFindPage(/\/admin\/quiz\/.*\/edit/);
 
   await page.bringToFront();
   await page.waitForLoadState('domcontentloaded');
@@ -49,8 +40,7 @@ async function main() {
   await page.waitForTimeout(1000);
   const savedLanguage = ((await page.getByTestId('publish-modal-language-input-select-box').textContent()) || '').trim();
 
-  const outDir = path.join(process.cwd(), 'automation', 'output');
-  fs.mkdirSync(outDir, { recursive: true });
+  const outDir = ensureOutputDir();
   await page.screenshot({
     path: path.join(outDir, 'wayground-language-chinese.png'),
     fullPage: true,
