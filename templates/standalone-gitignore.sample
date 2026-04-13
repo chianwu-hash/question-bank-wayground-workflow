@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Runtime output
+automation/output/
+.tmp-chatgpt/
+.tmp-gemini/
+
+# Large or generated source materials
+*.pdf
+*.png
+*.txt
+
+# OS files
+.DS_Store
+desktop.ini
+Thumbs.db
+~$*
+*.tmp
