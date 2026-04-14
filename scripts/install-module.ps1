@@ -68,6 +68,10 @@ if (-not (Test-Path -LiteralPath $projectConfig)) {
 $packageScripts = Join-Path $targetRoot "PACKAGE_SCRIPTS_SNIPPET.question-bank-wayground.json"
 Copy-Item -LiteralPath (Join-Path $moduleRoot "PACKAGE_SCRIPTS_SNIPPET.json") -Destination $packageScripts -Force
 
+$skillsDir = Join-Path $targetRoot "skills"
+Ensure-Dir $skillsDir
+Copy-Item -Path (Join-Path $moduleRoot "skills\*") -Destination $skillsDir -Recurse -Force
+
 Write-Host "Question-bank Wayground workflow module installed."
 Write-Host "Target: $targetRoot"
 Write-Host "Next steps:"
