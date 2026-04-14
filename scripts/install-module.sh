@@ -59,6 +59,8 @@ fi
 
 cp "$module_root/PACKAGE_SCRIPTS_SNIPPET.json" "$target_root/PACKAGE_SCRIPTS_SNIPPET.question-bank-wayground.json"
 
+cp -R "$module_root/skills/." "$target_root/skills/"
+
 cat <<EOF
 Question-bank Wayground workflow module installed.
 Target: $target_root

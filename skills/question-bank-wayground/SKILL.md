@@ -18,28 +18,30 @@ Use this skill when the task is about:
 
 先依任務需要讀以下檔案。若任務是完整出題到發布流程，照順序讀：
 
-1. `../../README.md`
-2. `../../END_TO_END_FLOW.md`
-3. `../../TEXTBOOK_TO_BANK_SOP.md`
-4. `../../DISTRACTOR_SELF_REVIEW.md`
-5. `../../WORKFLOW_SOP.md`
-6. `../../docs/question-bank-quality-spec.md`
-7. `../../docs/subject-wayground-routing.md`
-8. `../../prompts/master-question-bank-prompt-template.md`
+1. `./references/README.md`
+2. `./references/END_TO_END_FLOW.md`
+3. `./references/TEXTBOOK_TO_BANK_SOP.md`
+4. `./references/DISTRACTOR_SELF_REVIEW.md`
+5. `./references/WORKFLOW_SOP.md`
+6. `./references/question-bank-quality-spec.md`
+7. `./references/subject-wayground-routing.md`
+8. `./references/prompts/master-question-bank-prompt-template.md`
 9. 對應分科 prompt：
-   - `../../prompts/subjects/chinese-prompt-template.md`
-   - `../../prompts/subjects/english-prompt-template.md`
-   - `../../prompts/subjects/math-prompt-template.md`
-   - `../../prompts/subjects/science-prompt-template.md`
-   - `../../prompts/subjects/social-prompt-template.md`
-10. `../../prompts/review/gemini-review-prompt-template.md`
-11. `../../prompts/review/claude-final-review-prompt-template.md`
+   - `./references/prompts/subjects/chinese-prompt-template.md`
+   - `./references/prompts/subjects/english-prompt-template.md`
+   - `./references/prompts/subjects/math-prompt-template.md`
+   - `./references/prompts/subjects/science-prompt-template.md`
+   - `./references/prompts/subjects/social-prompt-template.md`
+10. `./references/prompts/review/gemini-review-prompt-template.md`
+11. `./references/prompts/review/claude-final-review-prompt-template.md`
 
 若任務只牽涉局部操作，不必每次讀完整套：
 
-- 只做題庫品質檢查：讀 `TEXTBOOK_TO_BANK_SOP.md`、`DISTRACTOR_SELF_REVIEW.md`、`docs/question-bank-quality-spec.md`
-- 只做 Wayground 操作：讀 `WORKFLOW_SOP.md`、`docs/tooling.md`、`docs/subject-wayground-routing.md`
+- 只做題庫品質檢查：讀 `TEXTBOOK_TO_BANK_SOP.md`、`DISTRACTOR_SELF_REVIEW.md`、`question-bank-quality-spec.md`
+- 只做 Wayground 操作：讀 `WORKFLOW_SOP.md`、`tooling.md`、`subject-wayground-routing.md`
 - 只做安裝或搬移：讀 `README.md`、`DEPLOYMENT_CHECKLIST.md`
+
+（以上省略路徑的檔案均在 `./references/` 下）
 
 ## Workflow Rules
 
@@ -58,7 +60,7 @@ Use this skill when the task is about:
 
 ## Subject Routing
 
-先讀 `../../docs/subject-wayground-routing.md`，再依科目分流。
+先讀 `./references/subject-wayground-routing.md`，再依科目分流。
 
 目前預設：
 
@@ -77,13 +79,7 @@ Use this skill when the task is about:
 - `automation/output/`
 - `wayground/`
 
-若專案工作區尚未建立，依：
-
-- `../../PROJECT_CONFIG_TEMPLATE.md`
-- `../../DEPLOYMENT_CHECKLIST.md`
-- `../../templates/project-workspace.sample.md`
-
-建立標準結構。
+若專案工作區尚未建立，依 `./references/DEPLOYMENT_CHECKLIST.md` 建立標準結構。
 
 ## Expected Outputs
 
@@ -98,9 +94,7 @@ Use this skill when the task is about:
 
 ## Automation Notes
 
-Wayground / Gemini 腳本在：
-
-- `../../automation/`
+Wayground / Gemini 腳本在專案的 `automation/` 目錄下。
 
 若要操作瀏覽器，優先先確認：
 
@@ -109,9 +103,7 @@ Wayground / Gemini 腳本在：
 - Gemini 已登入
 - 專案需要的腳本與 output 路徑已建立
 
-需要工具細節時再讀：
-
-- `../../docs/tooling.md`
+需要工具細節時再讀 `./references/tooling.md`。
 
 ## Safety
 
