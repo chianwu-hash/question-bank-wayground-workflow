@@ -40,6 +40,7 @@ Use this skill when the task is about:
 - 只做題庫品質檢查：讀 `TEXTBOOK_TO_BANK_SOP.md`、`DISTRACTOR_SELF_REVIEW.md`、`question-bank-quality-spec.md`
 - 只做 Wayground 操作：讀 `WORKFLOW_SOP.md`、`tooling.md`、`subject-wayground-routing.md`
 - 只做安裝或搬移：讀 `README.md`、`DEPLOYMENT_CHECKLIST.md`
+- 遇到腳本失敗或 UI 異常：讀 `troubleshooting.md`
 
 （以上省略路徑的檔案均在 `./references/` 下）
 
