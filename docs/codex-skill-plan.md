@@ -128,11 +128,13 @@ skills/question-bank-wayground/
 - `agents/openai.yaml`：提供 Codex UI 顯示名稱、簡述與預設提示詞
 - `references/`：skill 自帶所有必讀文件副本（SOP、prompts、quality spec、routing、tooling）
 - `SKILL.md` 路徑改用 `./references/`，不再依賴 repo 結構
+- `references/troubleshooting.md`：收錄 Wayground UI 變動與 CDP 操作的手動介入點
 - `install-module.sh` 更新為同時複製 `skills/` 到目標專案
+- `install-module.ps1` 更新為同時複製 `skills/` 到目標專案
 - 用乾淨測試專案（`/tmp/qbwf-skill-validation`）驗證安裝後 skill 結構完整
 
 目前尚未完成：
 
-- 專用 troubleshooting 參考檔（Wayground UI 變動的手動介入點）
 - `references/` 與 `docs/workflow/` 有重複內容，文件改版後需同步兩處
   — 目前接受此重複，維護時記得兩處都更新
+- 用另一個真實專案完整驗證 skill 是否足以獨立帶完題庫產生、審題、Wayground 發布流程
