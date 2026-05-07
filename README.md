@@ -49,9 +49,8 @@ Windows / PowerShell：
 適用情境：
 - 從 PDF 教材、歷屆考題或教師手冊整理文字資料。
 - 依教材範圍與命題規格組合 prompt，產生本地 Markdown 題庫。
-- 在本地產出 Markdown 題庫。
-- 做本地自檢與 Gemini 第二審稿。
-- 重要題庫可再做 Claude 最終審稿。
+- 以「前置摘要 → 題型藍圖/coverage 一張表 → 本地題庫 → 本地一審 → 外部審題與上架」五步流程製作題庫。
+- 本地一審合併格式、coverage 與誘答自審；正式給學生使用時再做 Gemini 二審，重要題庫可再做 Claude 最終 gate。
 - 將題庫直接匯入 Wayground，避免 AI 生成流程改寫題目。
 - 最後整理成題組入口網頁。
 
