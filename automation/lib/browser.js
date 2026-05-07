@@ -2,7 +2,7 @@ const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
 
-const CDP_URL = 'http://127.0.0.1:9222';
+const CDP_URL = process.env.CDP_URL || 'http://127.0.0.1:9222';
 
 async function connectAndFindPage(urlPattern) {
   const browser = await chromium.connectOverCDP(CDP_URL);

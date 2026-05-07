@@ -24,9 +24,14 @@
 **原因：** Chrome 未在 CDP 模式下啟動，或 port 不正確。
 
 **處理：**
-1. 確認 Chrome 已用 `--remote-debugging-port=9222` 啟動
+1. 確認 Chrome 已用 `--remote-debugging-port=9222` 啟動，或確認你要使用的實際 port
 2. 在瀏覽器開啟 `http://127.0.0.1:9222/json` 確認有 tab 列表
 3. 確認 Wayground 已在該 Chrome 中登入
+4. 若不是使用 `9222`，執行指令時設定 `CDP_URL`，例如：
+
+```bash
+CDP_URL=http://127.0.0.1:18801 npm run wayground:inspect
+```
 
 ---
 

@@ -42,11 +42,12 @@ Use this checklist after copying the module into a new project.
 
 ## Browser setup
 
-- [ ] Chrome is opened with remote debugging on port `9222`
+- [ ] Chrome is opened with remote debugging on port `9222`, or `CDP_URL` is set to the active CDP endpoint
 - [ ] User is already logged into Wayground in that Chrome profile
 - [ ] User is already logged into Gemini if Gemini review will be used
 - [ ] `npm.cmd run browser:smoke` succeeds
 - [ ] `npm.cmd run wayground:inspect` succeeds when the logged-in browser is ready
+- [ ] If using a non-default CDP port, commands are run with `CDP_URL=http://127.0.0.1:<port>`
 
 ## Textbook to bank trial
 

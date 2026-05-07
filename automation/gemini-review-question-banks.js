@@ -157,7 +157,7 @@ async function main() {
   const options = parseArgs(process.argv.slice(2));
   fs.mkdirSync(options.outDir, { recursive: true });
 
-  const browser = await chromium.connectOverCDP('http://127.0.0.1:9222');
+  const browser = await chromium.connectOverCDP(process.env.CDP_URL || 'http://127.0.0.1:9222');
   const context = browser.contexts()[0];
   if (!context) throw new Error('No CDP browser context found.');
 

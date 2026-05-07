@@ -14,6 +14,12 @@ npm install
 
 2. 準備已登入 Wayground / Gemini 的 Chrome，並以 `9222` 開啟 remote debugging。
 
+   若你的 Chrome 使用其他 CDP port，可用環境變數覆蓋，例如：
+
+   ```bash
+   CDP_URL=http://127.0.0.1:18801 npm run wayground:inspect
+   ```
+
 3. 先測試瀏覽器連線：
 
 ```bash
@@ -168,5 +174,6 @@ wayground/
 ## 已知限制
 
 - `wayground-import-from-bank.js` 會保留文字，但不會自動轉成漂亮的數學公式物件；數學科若需要 Wayground 公式渲染，可依 `docs/subject-wayground-routing.md` 走 AI 出題後清題流程。
+- `wayground-import-from-bank.js` 會忽略題後 metadata，例如 `難易度`、`難度`、`Bloom`、`依據` 與分隔線，避免審題資訊混進 Wayground 題幹。
 - 複雜圖表、幾何圖、圖片題仍需另外處理。
-- 需要使用已登入 Chrome 的 CDP session，不建議讓 AI 重新登入帳號。
+- 需要使用已登入 Chrome 的 CDP session，不建議讓 AI 重新登入帳號。預設連線為 `http://127.0.0.1:9222`，可用 `CDP_URL` 覆蓋。

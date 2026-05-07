@@ -79,6 +79,7 @@ function parseQuestionBank(markdown) {
         stemLines: [qMatch[2].trim()],
         options: {},
         answer: null,
+        done: false,
       };
       currentOptionKey = null;
       continue;
@@ -86,7 +87,8 @@ function parseQuestionBank(markdown) {
 
     if (!current) continue;
     if (/^##\s+/.test(trimmed)) continue;
-    if (/^(難度|Bloom)[:：]\s*/.test(trimmed)) continue;
+    if (/^(難度|難易度|Bloom|依據)[:：]\s*/.test(trimmed)) continue;
+    if (/^---+$/.test(trimmed)) continue;
     if (/^[A-D]\.\s*/.test(trimmed)) {
       const optionMatch = trimmed.match(/^([A-D])\.\s*(.*)$/);
       currentOptionKey = optionMatch[1];
@@ -97,9 +99,12 @@ function parseQuestionBank(markdown) {
     const answerMatch = trimmed.match(/^答案[:：]\s*([A-D])$/);
     if (answerMatch) {
       current.answer = answerMatch[1];
+      current.done = true;
       currentOptionKey = null;
       continue;
     }
+
+    if (current.done) continue;
 
     if (currentOptionKey) {
       current.options[currentOptionKey].push(trimmed);
