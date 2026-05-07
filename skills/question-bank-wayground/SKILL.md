@@ -20,24 +20,26 @@ Use this skill when the task is about:
 
 1. `./references/README.md`
 2. `./references/END_TO_END_FLOW.md`
-3. `./references/TEXTBOOK_TO_BANK_SOP.md`
-4. `./references/DISTRACTOR_SELF_REVIEW.md`
-5. `./references/WORKFLOW_SOP.md`
-6. `./references/question-bank-quality-spec.md`
-7. `./references/subject-wayground-routing.md`
-8. `./references/prompts/master-question-bank-prompt-template.md`
-9. 對應分科 prompt：
+3. `./references/PREP_BEFORE_QUESTION_BANK_SOP.md`
+4. `./references/TEXTBOOK_TO_BANK_SOP.md`
+5. `./references/DISTRACTOR_SELF_REVIEW.md`
+6. `./references/WORKFLOW_SOP.md`
+7. `./references/question-bank-quality-spec.md`
+8. `./references/subject-wayground-routing.md`
+9. `./references/prompts/master-question-bank-prompt-template.md`
+10. 對應分科 prompt：
    - `./references/prompts/subjects/chinese-prompt-template.md`
    - `./references/prompts/subjects/english-prompt-template.md`
    - `./references/prompts/subjects/math-prompt-template.md`
    - `./references/prompts/subjects/science-prompt-template.md`
    - `./references/prompts/subjects/social-prompt-template.md`
-10. `./references/prompts/review/gemini-review-prompt-template.md`
-11. `./references/prompts/review/claude-final-review-prompt-template.md`
+11. `./references/prompts/review/gemini-review-prompt-template.md`
+12. `./references/prompts/review/claude-final-review-prompt-template.md`
 
 若任務只牽涉局部操作，不必每次讀完整套：
 
-- 只做題庫品質檢查：讀 `TEXTBOOK_TO_BANK_SOP.md`、`DISTRACTOR_SELF_REVIEW.md`、`question-bank-quality-spec.md`
+- 只做教材前置整理：讀 `PREP_BEFORE_QUESTION_BANK_SOP.md`
+- 只做題庫品質檢查：讀 `PREP_BEFORE_QUESTION_BANK_SOP.md`、`TEXTBOOK_TO_BANK_SOP.md`、`DISTRACTOR_SELF_REVIEW.md`、`question-bank-quality-spec.md`
 - 只做 Wayground 操作：讀 `WORKFLOW_SOP.md`、`tooling.md`、`subject-wayground-routing.md`
 - 只做安裝或搬移：讀 `README.md`、`DEPLOYMENT_CHECKLIST.md`
 - 遇到腳本失敗或 UI 異常：讀 `troubleshooting.md`
@@ -47,6 +49,8 @@ Use this skill when the task is about:
 ## Workflow Rules
 
 - 不跳過本地 Markdown 題庫階段。
+- 正式產題前先整理教材、課綱或能力指標、教學目標與出題範圍。
+- 除非使用者明確指定單一概念，題庫要覆蓋主要教學目標，不可偏廢。
 - 不把未審教材直接交給 Wayground AI 當最終題庫。
 - 困難題與高風險中等題，必須能說明每個錯誤選項為什麼學生可能會誤選。
 - Gemini 與 Claude 是審稿者，不是最終裁判；最終仍要回教材與範圍核對。

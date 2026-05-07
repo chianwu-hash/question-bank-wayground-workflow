@@ -63,6 +63,7 @@ Windows / PowerShell：
 - `CHANGELOG.md`：通用模組變更紀錄。
 - `PROJECT_CONFIG_TEMPLATE.md`：新專案設定檔範本。
 - `PACKAGE_SCRIPTS_SNIPPET.json`：可加入新專案 `package.json` 的 scripts 片段。
+- `PREP_BEFORE_QUESTION_BANK_SOP.md`：教材、課綱、教學目標與出題範圍整理的前置 SOP。
 - `WORKFLOW_SOP.md`：搬移版流程 SOP。
 - `TEXTBOOK_TO_BANK_SOP.md`：從教材整理、組合 prompt、產出題庫到審題的前半段 SOP。
 - `DISTRACTOR_SELF_REVIEW.md`：進 Wayground 前的誘答選項自審門檻。
@@ -103,6 +104,7 @@ workflow-module\PROJECT_CONFIG_TEMPLATE.md
 - 複製 `automation/` 腳本到新專案。
 - 補上 `package.json` scripts。
 - 建立專案設定檔。
+- 先依 `PREP_BEFORE_QUESTION_BANK_SOP.md` 整理教材、課綱、教學目標與出題範圍。
 - 複製教材到題庫 SOP 與 prompt 模板。
 - 建立新專案專用的命題 prompt。
 - 試產一份本地 Markdown 題庫並完成審題。

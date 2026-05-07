@@ -29,10 +29,20 @@ wayground/
 依：
 
 ```text
+docs/workflow/PREP_BEFORE_QUESTION_BANK_SOP.md
 docs/workflow/TEXTBOOK_TO_BANK_SOP.md
 ```
 
-把教材、教師手冊、範圍公告、歷屆試題放到 `docs/references/`，並轉成可讀的 UTF-8 `.txt` 或 Markdown。
+先把教材、教師手冊、課綱或能力指標、範圍公告、歷屆試題放到 `docs/references/`，並轉成可讀的 UTF-8 `.txt` 或 Markdown。
+
+正式產題前應先依 `PREP_BEFORE_QUESTION_BANK_SOP.md` 建立四層整理資料：
+
+- 官方課綱或能力指標索引
+- 教材課綱對應
+- 教學目標
+- 出題範圍
+
+若沒有特別指定只練單一概念，題庫必須覆蓋主要教學目標，不可偏廢。
 
 ## 3. 產生本地題庫
 
@@ -65,6 +75,7 @@ automation/question-banks/<bank-name>.md
 依：
 
 ```text
+docs/workflow/PREP_BEFORE_QUESTION_BANK_SOP.md
 docs/workflow/TEXTBOOK_TO_BANK_SOP.md
 docs/workflow/question-bank-quality-spec.md
 docs/workflow/DISTRACTOR_SELF_REVIEW.md
@@ -77,6 +88,7 @@ docs/workflow/DISTRACTOR_SELF_REVIEW.md
 - 干擾項
 - 重複與概念過度重複
 - 難易度
+- 教學目標覆蓋率
 - 是否符合 Wayground 單選限制
 
 困難題與高風險中等題必須依 `docs/workflow/DISTRACTOR_SELF_REVIEW.md` 做誘答選項自審。

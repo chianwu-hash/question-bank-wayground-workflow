@@ -45,6 +45,7 @@ cp "$module_root/AI_DEPLOY_PROMPT.md" "$workflow_dir"/
 cp "$module_root/README.md" "$workflow_dir"/
 cp "$module_root/END_TO_END_FLOW.md" "$workflow_dir"/
 cp "$module_root/DEPLOYMENT_CHECKLIST.md" "$workflow_dir"/
+cp "$module_root/PREP_BEFORE_QUESTION_BANK_SOP.md" "$workflow_dir"/
 cp "$module_root/WORKFLOW_SOP.md" "$workflow_dir"/
 cp "$module_root/TEXTBOOK_TO_BANK_SOP.md" "$workflow_dir"/
 cp "$module_root/DISTRACTOR_SELF_REVIEW.md" "$workflow_dir"/

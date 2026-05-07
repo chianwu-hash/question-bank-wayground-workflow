@@ -52,6 +52,7 @@ Copy-FileToDir (Join-Path $moduleRoot "AI_DEPLOY_PROMPT.md") $workflowDir
 Copy-FileToDir (Join-Path $moduleRoot "README.md") $workflowDir
 Copy-FileToDir (Join-Path $moduleRoot "END_TO_END_FLOW.md") $workflowDir
 Copy-FileToDir (Join-Path $moduleRoot "DEPLOYMENT_CHECKLIST.md") $workflowDir
+Copy-FileToDir (Join-Path $moduleRoot "PREP_BEFORE_QUESTION_BANK_SOP.md") $workflowDir
 Copy-FileToDir (Join-Path $moduleRoot "WORKFLOW_SOP.md") $workflowDir
 Copy-FileToDir (Join-Path $moduleRoot "TEXTBOOK_TO_BANK_SOP.md") $workflowDir
 Copy-FileToDir (Join-Path $moduleRoot "DISTRACTOR_SELF_REVIEW.md") $workflowDir

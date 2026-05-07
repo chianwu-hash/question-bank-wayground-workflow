@@ -16,14 +16,15 @@
 3. `DEPLOYMENT_CHECKLIST.md`
 4. `PROJECT_CONFIG_TEMPLATE.md`
 5. `WORKFLOW_SOP.md`
-6. `TEXTBOOK_TO_BANK_SOP.md`
-7. `DISTRACTOR_SELF_REVIEW.md`
-8. `prompts/README.md`
-9. `PACKAGE_SCRIPTS_SNIPPET.json`
-10. `docs/question-bank-quality-spec.md`
-11. `docs/tooling.md`
-12. `templates/wayground-quizzes.sample.json`
-13. `scripts/install-module.ps1`
+6. `PREP_BEFORE_QUESTION_BANK_SOP.md`
+7. `TEXTBOOK_TO_BANK_SOP.md`
+8. `DISTRACTOR_SELF_REVIEW.md`
+9. `prompts/README.md`
+10. `PACKAGE_SCRIPTS_SNIPPET.json`
+11. `docs/question-bank-quality-spec.md`
+12. `docs/tooling.md`
+13. `templates/wayground-quizzes.sample.json`
+14. `scripts/install-module.ps1`
 
 然後依照新專案的實際需求，協助使用者完成部署。
 
@@ -50,7 +51,7 @@
 npm install --save-dev playwright
 ```
 
-7. 將 `README.md`、`AI_DEPLOY_PROMPT.md`、`END_TO_END_FLOW.md`、`DEPLOYMENT_CHECKLIST.md`、`WORKFLOW_SOP.md`、`docs/question-bank-quality-spec.md`、`docs/tooling.md` 複製或連結到新專案 `docs/workflow/`。
+7. 將 `README.md`、`AI_DEPLOY_PROMPT.md`、`END_TO_END_FLOW.md`、`DEPLOYMENT_CHECKLIST.md`、`WORKFLOW_SOP.md`、`PREP_BEFORE_QUESTION_BANK_SOP.md`、`docs/question-bank-quality-spec.md`、`docs/tooling.md` 複製或連結到新專案 `docs/workflow/`。
 8. 將 `TEXTBOOK_TO_BANK_SOP.md`、`DISTRACTOR_SELF_REVIEW.md` 複製或連結到新專案 `docs/workflow/`。
 9. 將本模組的 `prompts/` 複製到新專案 `docs/workflow/prompts/templates/`。
 10. 將本模組的 `templates/wayground-quizzes.sample.json` 複製到新專案 `templates/`，並在需要收集連結時建立 `automation/wayground-quizzes.json`。
@@ -73,17 +74,18 @@ npm install --save-dev playwright
 
 請先用新專案教材或教材節錄驗證前半段流程：
 
-1. 將教材文字放入 `docs/references/textbooks/`。
-2. 在 `project.config.md` 寫明年級、科目、範圍、題數、難易度比例。
-3. 使用 `docs/workflow/prompts/master-prompt.md` 與對應分科 prompt 產出：
+1. 先依 `PREP_BEFORE_QUESTION_BANK_SOP.md` 整理教材、課綱或能力指標、教學目標與出題範圍。
+2. 將教材文字放入 `docs/references/textbooks/`。
+3. 在 `project.config.md` 寫明年級、科目、範圍、題數、難易度比例。
+4. 使用 `docs/workflow/prompts/master-prompt.md` 與對應分科 prompt 產出：
 
 ```text
 automation/question-banks/sample.md
 ```
 
-4. 依 `TEXTBOOK_TO_BANK_SOP.md` 檢查範圍、答案、題數、干擾項與難易度。
-5. 依 `DISTRACTOR_SELF_REVIEW.md` 對困難題與高風險中等題做誘答選項自審。
-6. 若該科需要二審，使用 `docs/workflow/prompts/review/gemini-review-prompt.md` 做 Gemini 第二審稿。
+5. 依 `TEXTBOOK_TO_BANK_SOP.md` 檢查範圍、答案、題數、干擾項、教學目標覆蓋與難易度。
+6. 依 `DISTRACTOR_SELF_REVIEW.md` 對困難題與高風險中等題做誘答選項自審。
+7. 若該科需要二審，使用 `docs/workflow/prompts/review/gemini-review-prompt.md` 做 Gemini 第二審稿。
 
 ## 試跑流程
 

@@ -11,6 +11,7 @@ Use this checklist after copying the module into a new project.
 - [ ] `docs/workflow/README.md` exists
 - [ ] `docs/workflow/AI_DEPLOY_PROMPT.md` exists
 - [ ] `docs/workflow/END_TO_END_FLOW.md` exists
+- [ ] `docs/workflow/PREP_BEFORE_QUESTION_BANK_SOP.md` exists
 - [ ] `docs/workflow/TEXTBOOK_TO_BANK_SOP.md` exists
 - [ ] `docs/workflow/DISTRACTOR_SELF_REVIEW.md` exists
 - [ ] `docs/workflow/WORKFLOW_SOP.md` exists
@@ -52,6 +53,7 @@ Use this checklist after copying the module into a new project.
 ## Textbook to bank trial
 
 - [ ] A small textbook excerpt is placed in `docs/references/textbooks/`
+- [ ] Curriculum / competency indicators, teaching goals, and question scope have been organized according to `PREP_BEFORE_QUESTION_BANK_SOP.md`
 - [ ] A 5 to 10 question sample bank is generated in `automation/question-banks/sample.md`
 - [ ] Local validation is completed
 - [ ] `docs/workflow/DISTRACTOR_SELF_REVIEW.md` is applied to difficult and high-risk medium questions
