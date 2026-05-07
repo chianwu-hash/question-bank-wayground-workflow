@@ -56,7 +56,7 @@ Use this checklist after copying the module into a new project.
 - [ ] Curriculum / competency indicators, teaching goals, and question scope have been organized according to `PREP_BEFORE_QUESTION_BANK_SOP.md`
 - [ ] A 5 to 10 question sample bank is generated in `automation/question-banks/sample.md`
 - [ ] Local validation is completed
-- [ ] `docs/workflow/DISTRACTOR_SELF_REVIEW.md` is applied to difficult and high-risk medium questions
+- [ ] `docs/workflow/DISTRACTOR_SELF_REVIEW.md` is applied to apply/analyze/evaluate and high-risk questions
 - [ ] Gemini second review is completed when required
 - [ ] Any review findings are resolved in the local bank
 

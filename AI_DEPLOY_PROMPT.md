@@ -76,15 +76,15 @@ npm install --save-dev playwright
 
 1. 先依 `PREP_BEFORE_QUESTION_BANK_SOP.md` 整理教材、課綱或能力指標、教學目標與出題範圍。
 2. 將教材文字放入 `docs/references/textbooks/`。
-3. 在 `project.config.md` 寫明年級、科目、範圍、題數、難易度比例。
+3. 在 `project.config.md` 寫明年級、科目、範圍、題數與 Bloom 分配原則。
 4. 使用 `docs/workflow/prompts/master-prompt.md` 與對應分科 prompt 產出：
 
 ```text
 automation/question-banks/sample.md
 ```
 
-5. 依 `TEXTBOOK_TO_BANK_SOP.md` 檢查範圍、答案、題數、干擾項、教學目標覆蓋與難易度。
-6. 依 `DISTRACTOR_SELF_REVIEW.md` 對困難題與高風險中等題做誘答選項自審。
+5. 依 `TEXTBOOK_TO_BANK_SOP.md` 檢查範圍、答案、題數、干擾項、教學目標覆蓋與 Bloom 分配。
+6. 依 `DISTRACTOR_SELF_REVIEW.md` 對應用、分析、評鑑與高風險題做誘答選項自審。
 7. 若該科需要二審，使用 `docs/workflow/prompts/review/gemini-review-prompt.md` 做 Gemini 第二審稿。
 
 ## 試跑流程
@@ -105,7 +105,7 @@ npm.cmd run wayground:publish
 
 - 不要跳過本地題庫驗證。
 - 不要跳過教材到題庫的本地 Markdown 題庫階段。
-- 不要跳過誘答選項自審；困難題若無法說明錯誤選項的誘答來源，必須先重寫。
+- 不要跳過誘答選項自審；應用、分析、評鑑或高風險題若無法說明錯誤選項的誘答來源，必須先重寫。
 - 不要讓 Wayground AI 改寫已驗證題庫，除非使用者明確要求生成新題。
 - 優先使用 `wayground:import`。
 - 若要用 Gemini，請使用已登入 Chrome + CDP，不要開新的登入流程。
@@ -118,7 +118,7 @@ npm.cmd run wayground:publish
 
 - 年級與考試目標，例如國二會考準備、段考複習、單元練習。
 - 科目與冊次範圍。
-- 每份題庫題數與難易度分配。
+- 每份題庫題數與 Bloom 分配原則。
 - Wayground 題組入口頁要放在哪裡。
 - 教材 PDF 是否要進版控。
 

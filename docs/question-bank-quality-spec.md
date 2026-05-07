@@ -10,7 +10,7 @@ It should already be:
 - within scope
 - factually correct
 - clear for elementary students
-- hard enough to distinguish understanding levels
+- cognitively varied enough to distinguish understanding levels
 - resistant to being solved by pure common sense or tone-matching
 
 ## Non-negotiable gates
@@ -22,7 +22,6 @@ Do not move a bank to Wayground if any of these are still true:
 - there are obvious duplicate questions
 - the requested question count is wrong
 - the requested range is wrong
-- the difficulty split is obviously off
 - the Bloom distribution is missing or the bank collapses into mostly recall items without a clear reason
 - the item is testing test-design knowledge, teaching goals, or workflow meta-knowledge instead of the student-facing subject content
 - the answer could change based on a student's personal life experience, household norms, or subjective category judgment
@@ -133,9 +132,9 @@ Good distractors:
 - differ for a real reason, not just because one sounds nicer
 
 Pass standard:
-- at least two distractors in most medium or hard questions should be plausible enough that a student could reasonably hesitate
+- at least two distractors in most understand-or-above questions should be plausible enough that a student could reasonably hesitate
 - the correct answer should not simply be the longest, nicest, or most morally positive option
-- avoid making the wrong options wildly extreme unless the item is intentionally easy
+- avoid making the wrong options wildly extreme unless the item is intentionally basic recall
 
 #### Special rule for synthesis and summary questions
 
@@ -145,35 +144,32 @@ For these questions, every wrong option must correspond to a specific misreading
 
 Wrong options that represent moral positions no text in the unit would convey are not valid distractors for these questions, even if they are clearly false. A student who read all three texts carefully should still need to think before eliminating each wrong option.
 
-### 6. Difficulty control
+### 6. Bloom-based cognitive control
 
-Difficulty should come from thinking depth, not only wording length.
+Question challenge should come from thinking depth, not only wording length.
 
-Default difficulty distribution:
-- per 10 questions: hard 3, medium 5, easy 2
-- for 30 questions: hard 9, medium 15, easy 6
-- if the requested count does not divide cleanly, distribute the remainder deliberately and record the reason
+Default planning uses Bloom levels instead of an easy/medium/hard split.
 
-Easy questions should test:
+Remember questions should test:
 - key fact recognition
 - basic meaning
 - direct textbook recall
 
-Medium questions should test:
-- understanding
+Understand and apply questions should test:
+- explanation
 - simple application
 - choosing between similar ideas
 
-Hard questions should test:
+Analyze and evaluate questions should test:
 - comparison
 - multi-factor judgment
 - interpreting a situation using the lesson concept
 - distinguishing between two plausible options
 
 Pass standard:
-- hard questions must not be hard only because they are longer
-- a hard question should usually require actual comparison or reasoning
-- if the answer is obvious because three options are ridiculous, it is not hard
+- application, analysis, and evaluation questions must not be high-level only because they are longer
+- a higher-level item should require actual comparison, transfer, reasoning, or criteria-based judgment
+- if the answer is obvious because three options are ridiculous, it is not a strong higher-level item
 
 ### 7. Bloom cognitive level
 
@@ -193,8 +189,8 @@ Level guide:
 
 Pass standard:
 - the bank should not collapse into mostly recall unless the user explicitly requests drill practice
-- hard questions should usually fall in apply, analyze, or evaluate
-- easy questions may be remember or understand, but should still be clearly within scope
+- higher-level questions should usually fall in apply, analyze, or evaluate
+- remember and understand questions should still be clearly within scope
 - Bloom labels should describe the actual thinking required, not the wording style
 
 ## Subject-specific reminders
@@ -247,7 +243,6 @@ Checklist:
 - duplicates
 - wording
 - distractors
-- difficulty
 - Bloom distribution
 
 ### Tier 2: Gemini review for higher-risk banks

@@ -59,7 +59,7 @@ docs/workflow/prompts/templates/subjects/<subject>-prompt-template.md
 - 教材版本
 - 範圍
 - 題數
-- 難易度
+- Bloom 分配原則
 - 題型
 - 校內考風或歷屆試題摘要
 - 教材文字
@@ -87,11 +87,11 @@ docs/workflow/DISTRACTOR_SELF_REVIEW.md
 - 答案唯一性
 - 干擾項
 - 重複與概念過度重複
-- 難易度
+- Bloom 分配
 - 教學目標覆蓋率
 - 是否符合 Wayground 單選限制
 
-困難題與高風險中等題必須依 `docs/workflow/DISTRACTOR_SELF_REVIEW.md` 做誘答選項自審。
+應用、分析、評鑑與高風險題必須依 `docs/workflow/DISTRACTOR_SELF_REVIEW.md` 做誘答選項自審。
 
 ## 5. Gemini 第二審稿
 
@@ -151,5 +151,5 @@ wayground/index.html
 - Gemini 審題輸出絕對路徑
 - Wayground quiz id 或分享連結
 - 題組入口頁絕對路徑
-- 題數與難易度分配
+- 題數與 Bloom 分配
 - 主要修正紀錄

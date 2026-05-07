@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Standardized the workflow module on Bloom-only distribution as the default question-bank planning and review axis.
+- Updated Wayground import metadata parsing to ignore `分配檢查` lines.
 - Simplified `TEXTBOOK_TO_BANK_SOP.md` into a five-step flow: preprocessing summary, blueprint/coverage table, local bank generation, merged local review, and external review plus Wayground publishing.
 - Clarified that local review should merge format, coverage, item validity, distractor quality, style alignment, and question-group checks before Gemini/Claude review.
 - Added `PREP_BEFORE_QUESTION_BANK_SOP.md` for preparing curriculum references, textbook mappings, teaching goals, and question scope before generating a bank.

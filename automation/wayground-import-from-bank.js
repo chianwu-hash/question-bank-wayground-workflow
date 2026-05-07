@@ -87,7 +87,7 @@ function parseQuestionBank(markdown) {
 
     if (!current) continue;
     if (/^##\s+/.test(trimmed)) continue;
-    if (/^(難度|難易度|Bloom|依據)[:：]\s*/.test(trimmed)) continue;
+    if (/^(難度|難易度|Bloom|依據|分配檢查)[:：]\s*/.test(trimmed)) continue;
     if (/^---+$/.test(trimmed)) continue;
     if (/^[A-D]\.\s*/.test(trimmed)) {
       const optionMatch = trimmed.match(/^([A-D])\.\s*(.*)$/);

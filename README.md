@@ -166,7 +166,7 @@ wayground/
 
 - 教材與考題脈絡放在新專案，不要硬沿用原專案年級設定。
 - 教材到題庫的命題流程必須在本地完成，並留下可讀的 Markdown 題庫。
-- 困難題與高風險中等題必須先做誘答選項自審，不能把荒謬選項或顯然錯誤選項當成干擾項。
+- 應用、分析、評鑑與高風險題必須先做誘答選項自審，不能把荒謬選項或顯然錯誤選項當成干擾項。
 - 題庫必須先在本地完成，再進 Wayground。
 - Gemini 是第二審稿者，不是最終裁判。
 - Wayground 原則上優先使用 `wayground:import` 直接匯入，不讓 AI 改寫題目；若科目已實測有更適合的路線，依 `docs/subject-wayground-routing.md` 分流。
@@ -175,6 +175,6 @@ wayground/
 ## 已知限制
 
 - `wayground-import-from-bank.js` 會保留文字，但不會自動轉成漂亮的數學公式物件；數學科若需要 Wayground 公式渲染，可依 `docs/subject-wayground-routing.md` 走 AI 出題後清題流程。
-- `wayground-import-from-bank.js` 會忽略題後 metadata，例如 `難易度`、`難度`、`Bloom`、`依據` 與分隔線，避免審題資訊混進 Wayground 題幹。
+- `wayground-import-from-bank.js` 會忽略題後 metadata，例如 `難易度`、`難度`、`Bloom`、`依據`、`分配檢查` 與分隔線，避免審題資訊混進 Wayground 題幹。
 - 複雜圖表、幾何圖、圖片題仍需另外處理。
 - 需要使用已登入 Chrome 的 CDP session，不建議讓 AI 重新登入帳號。預設連線為 `http://127.0.0.1:9222`，可用 `CDP_URL` 覆蓋。

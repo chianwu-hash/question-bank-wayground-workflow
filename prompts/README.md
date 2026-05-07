@@ -15,7 +15,7 @@ prompts/review/
 
 1. 先貼上 `master-question-bank-prompt-template.md`。
 2. 再貼上對應科目的 `subjects/<subject>-prompt-template.md`。
-3. 補上本次任務資料：年級、教材版本、範圍、題數、難度、題型、輸出格式。
+3. 補上本次任務資料：年級、教材版本、範圍、題數、Bloom 分配原則、題型、輸出格式。
 4. 貼上教材文字、教師手冊重點、考試範圍、校內考風摘要。
 5. 產出本地 Markdown 題庫。
 6. 用 `review/gemini-review-prompt-template.md` 做第二審稿。
